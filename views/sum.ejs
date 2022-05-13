@@ -1,0 +1,48 @@
+<%- include("_header") -%>
+
+<h2> Calculate Sum of Series</h2>
+
+<form>
+    <table>
+        <tr>
+            <td><label for="start">Enter Starting Number</label>:</td>
+            <td><input type="number" name="start" id="start" required/></td>
+            <td>(required)</td>
+        </tr>
+        <tr>
+            <td><label for="end">Enter Ending Number</label>:</td>
+            <td><input type="number" name="end" id="end" required/></td>
+            <td>(required)</td>
+        </tr>
+        <tr>
+            <td><label for="incre">Enter Increment</label>:</td>
+            <td><input type="number" name="incre" id="incre" required/></td>
+            <td>(required)</td>
+        </tr>
+        <tr>
+            <td><label for="sum">Sum of Series</label>:</td>
+            <td><input type="number" name="sum" id="sum" required/></td>
+
+        </tr>
+    </table>
+</form>
+
+<script>
+    function calc() {
+        var start = parseInt(document.getElementById('start').value);
+        var end = parseInt(document.getElementById('end').value);
+        var incre = document.getElementById('incre').value;
+        var sum = document.getElementById('sum').value;
+
+        if(start < end) {
+             document.getElementById('sum').value = (((end-start)/incre +1) * (end+start))/2; 
+
+        }
+    }
+</script>
+
+
+
+<button onclick="calc();">Calculate</button>
+
+<p id="sum"></p>
